@@ -6,13 +6,10 @@
 </head>
 <body>
 <h1>Edit To Do Item</h1>
-<form action="/todoapp/" method="POST">
+<form action="" method="POST">
     {% csrf_token %}
-    <la>title</la>
-    <input type="text" name="title">
-        <la>description</la>
-    <input type="text" name="description">
-    <button type="submit"> Edit </button>
+    {{ form.as_p }}
+    <button type="submit">Edit</button>
 </form>
 </body>
 </html>
