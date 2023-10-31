@@ -18,7 +18,8 @@
         {% for i in all_items %}
         <li><h2>{{i.title}}</h2>
             <p>{{i.description}}</p>
-            <form action="/editItem/{{i.id}}/" method="post"> {% csrf_token %}
+            <form action="/editItem/{{i.id}}/" method="post">
+                {% csrf_token %}
                 <input type="submit" value="Edit">
             </form>
             <form action="/deleteItem/{{i.id}}/" method="post"> {% csrf_token %}
