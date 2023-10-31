@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit To Do Tasks</title>
+</head>
+<body>
+<h1>Edit To Do Item</h1>
+<form action="/todoapp/" method="POST">
+    {% csrf_token %}
+    <la>title</la>
+    <input type="text" name="title">
+        <la>description</la>
+    <input type="text" name="description">
+    <button type="submit"> Edit </button>
+</form>
+</body>
+</html>
