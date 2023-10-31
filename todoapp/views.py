@@ -27,11 +27,15 @@ def deleteItem(request, i):
 
 def editItem(request, i):
     obj = TodoModel.objects.get(id=i)
-    mydictionary = {
-        "title" : obj.title,
-        "description" : obj.description,
-    }
-    return render(request,'edit.html',context=mydictionary)
+    if request.method == 'POST':
+        form = TodoForm(request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/todoapp/')
+    else:
+        form = TodoForm(instance=obj)
+
+    return render(request, 'edit.html', {'form': form})
 
 
 
